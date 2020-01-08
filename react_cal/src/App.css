@@ -1,10 +1,37 @@
 .App {
   text-align: center;
 }
+.cal-row{
+  display: flex; 
+  flex-direction: row; 
+  justify-content: space-evenly;
+  margin: 10px;
+}
+.cal-input{
+  display: flex; 
+  justify-content: flex-end; 
+  align-items: flex-end; 
+  width: 350px; 
+  height: 150px; 
+  font-size: 70px; 
+}
+.cal-btn-lng{
+  border: 1px solid black; 
+  border-radius: 40px; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  width: 155px; 
+  height: 75px; 
+}
 .cal-btn{
   border: 1px solid black; 
-  width: 100px; 
-  height: 100px; 
+  border-radius: 50%; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  width: 75px; 
+  height: 75px; 
 }
 .cal-body{
   width: 350px; 
