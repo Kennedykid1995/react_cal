@@ -6,14 +6,22 @@ const Buttons = () => {
     //try and get the click to console log the number/operator
     const [operation, setOperation] = useState([]);
     const handleInput = (e) => {
-        setOperation(e.target.value);
+        let values = e.target.value;
+        setOperation([
+            ...operation,
+            {
+                value: values
+            }
+        ]);
         console.log(operation)
     }
     return (
         <div>
             <section>
                 <div className="cal-input">
-                    {operation}
+                {operation.map(item => ( 
+                       <> {item.value}</>
+                ))}
                 </div>
             </section>
             <section className="cal-row">
@@ -24,25 +32,25 @@ const Buttons = () => {
             </section>
             <section className="cal-row">
                 <button onClick={e => handleInput(e, "value")} className="cal-btn" value="1">1</button>
-                <button className="cal-btn" value="2">2</button>
-                <button className="cal-btn" value="3">3</button>
-                <button className="cal-btn" value="X">X</button>
+                <button onClick={e => handleInput(e, "value")} className="cal-btn" value="2">2</button>
+                <button onClick={e => handleInput(e, "value")} className="cal-btn" value="3">3</button>
+                <button onClick={e => handleInput(e, "value")} className="cal-btn" value="X">X</button>
             </section>
             <section className="cal-row">
-                <button className="cal-btn" value="4">4</button>
-                <button className="cal-btn" value="5">5</button>
-                <button className="cal-btn" value="6">6</button>
-                <button className="cal-btn" value="-">-</button>
+                <button onClick={e => handleInput(e, "value")} className="cal-btn" value="4">4</button>
+                <button onClick={e => handleInput(e, "value")} className="cal-btn" value="5">5</button>
+                <button onClick={e => handleInput(e, "value")} className="cal-btn" value="6">6</button>
+                <button onClick={e => handleInput(e, "value")} className="cal-btn" value="-">-</button>
             </section>
             <section className="cal-row">
-                <button className="cal-btn" value="7">7</button>
-                <button className="cal-btn" value="8">8</button>
-                <button className="cal-btn" value="9">9</button>
-                <button className="cal-btn" value="+">+</button>
+                <button onClick={e => handleInput(e, "value")} className="cal-btn" value="7">7</button>
+                <button onClick={e => handleInput(e, "value")} className="cal-btn" value="8">8</button>
+                <button onClick={e => handleInput(e, "value")} className="cal-btn" value="9">9</button>
+                <button onClick={e => handleInput(e, "value")} className="cal-btn" value="+">+</button>
             </section>
             <section className="cal-row">
-                <button className="cal-btn-lng" value="0">0</button>
-                <button className="cal-btn" value=".">.</button>
+                <button onClick={e => handleInput(e, "value")} className="cal-btn-lng" value="0">0</button>
+                <button onClick={e => handleInput(e, "value")} className="cal-btn" value=".">.</button>
                 <button className="cal-btn">=</button>
             </section>
         </div>
