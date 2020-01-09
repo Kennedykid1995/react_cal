@@ -1,40 +1,49 @@
-import React from 'react'
-import CalInput from './CalInput'
+import React, { useState } from 'react'
 
 const Buttons = () => {
+    //we will need a function that takes the number/operator 
+    //from the button and register it in to the input. 
+    //try and get the click to console log the number/operator
+    const [operation, setOperation] = useState([]);
+    const handleInput = (e) => {
+        setOperation(e.target.value);
+        console.log(operation)
+    }
     return (
         <div>
             <section>
-                <CalInput />
+                <div className="cal-input">
+                    {operation}
+                </div>
             </section>
             <section className="cal-row">
                 <div className="cal-btn">AC</div>
                 <div className="cal-btn">+/-</div>
                 <div className="cal-btn">%</div>
-                <div className="cal-btn">/</div>
+                <div className="cal-btn" value="/">/</div>
             </section>
             <section className="cal-row">
-                <div className="cal-btn">1</div>
-                <div className="cal-btn">2</div>
-                <div className="cal-btn">3</div>
-                <div className="cal-btn">X</div>
+                <button onClick={e => handleInput(e, "value")} className="cal-btn" value="1">1</button>
+                <button className="cal-btn" value="2">2</button>
+                <button className="cal-btn" value="3">3</button>
+                <button className="cal-btn" value="X">X</button>
             </section>
             <section className="cal-row">
-                <div className="cal-btn">4</div>
-                <div className="cal-btn">5</div>
-                <div className="cal-btn">6</div>
-                <div className="cal-btn">-</div>
+                <button className="cal-btn" value="4">4</button>
+                <button className="cal-btn" value="5">5</button>
+                <button className="cal-btn" value="6">6</button>
+                <button className="cal-btn" value="-">-</button>
             </section>
             <section className="cal-row">
-                <div className="cal-btn">7</div>
-                <div className="cal-btn">8</div>
-                <div className="cal-btn">9</div>
-                <div className="cal-btn">+</div>
+                <button className="cal-btn" value="7">7</button>
+                <button className="cal-btn" value="8">8</button>
+                <button className="cal-btn" value="9">9</button>
+                <button className="cal-btn" value="+">+</button>
             </section>
             <section className="cal-row">
-                <div className="cal-btn-lng">0</div>
-                <div className="cal-btn">.</div>
-                <div className="cal-btn">=</div>
+                <button className="cal-btn-lng" value="0">0</button>
+                <button className="cal-btn" value=".">.</button>
+                <button className="cal-btn">=</button>
             </section>
         </div>
     )

@@ -23,7 +23,9 @@
   align-items: center; 
   width: 155px; 
   height: 75px; 
+  cursor: pointer;
 }
+button:focus {outline:0;}
 .cal-btn{
   border: 1px solid black; 
   border-radius: 50%; 
@@ -32,6 +34,7 @@
   align-items: center; 
   width: 75px; 
   height: 75px; 
+  cursor: pointer;
 }
 .cal-body{
   width: 350px; 

@@ -1,9 +1,9 @@
 import React from 'react';
 
-const CalInput = () => {
+const CalInput = (data) => {
     return (
         <div className="cal-input">
-        0
+
         </div>
     )
 }
