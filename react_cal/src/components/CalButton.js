@@ -15,6 +15,9 @@ const Buttons = () => {
         ]);
         console.log(operation)
     }
+
+    const [value, setValue] = useState(0); 
+    
     return (
         <div>
             <section>
