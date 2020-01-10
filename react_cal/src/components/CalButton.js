@@ -10,6 +10,7 @@ const Buttons = () => {
         setOperation([
             ...operation,
             {
+                key: Date.now(),
                 value: values
             }
         ]);
@@ -17,7 +18,10 @@ const Buttons = () => {
     }
 
     const [value, setValue] = useState(0); 
-    
+    const findArr = () => {
+        console.log(operation.join().replace(/,/g," ")); 
+    }
+
     return (
         <div>
             <section>
@@ -54,7 +58,7 @@ const Buttons = () => {
             <section className="cal-row">
                 <button onClick={e => handleInput(e, "value")} className="cal-btn-lng" value="0">0</button>
                 <button onClick={e => handleInput(e, "value")} className="cal-btn" value=".">.</button>
-                <button className="cal-btn">=</button>
+                <button onClick={() => findArr()} className="cal-btn">=</button>
             </section>
         </div>
     )
