@@ -10,16 +10,19 @@ const Buttons = () => {
         setOperation([
             ...operation,
             {
-                key: Date.now(),
                 value: values
             }
         ]);
         console.log(operation)
     }
 
-    const [value, setValue] = useState(0); 
+    const [value, setValue] = useState(0);  
+    const [func, setFunc] = useState(""); 
+
     const findArr = () => {
-        console.log(operation.join().replace(/,/g," ")); 
+        let str = (operation.join().replace(/,/g, '')); 
+        console.log(str); 
+
     }
 
     return (
@@ -27,7 +30,7 @@ const Buttons = () => {
             <section>
                 <div className="cal-input">
                 {operation.map(item => ( 
-                       <> {item.value}</>
+                       <>{item.value}</>
                 ))}
                 </div>
             </section>
